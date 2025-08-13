@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: absence
-  namespace: esprit-portail-entreprise
+  namespace: esprit-portail-entreprise-dev
   labels:
     app:  portail-entreprise
     portail-entreprise.service: absence
@@ -21,7 +21,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: absence
-  namespace: esprit-portail-entreprise
+  namespace: esprit-portail-entreprise-dev
   labels:
     app: portail-entreprise
     portail-entreprise.service: absence
@@ -58,7 +58,7 @@ spec:
           mountPath: /vault/secrets 
       containers:
       - name: portail-absence
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_absence:develop-59224292
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_absence:develop-b29c6d67
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: dev
