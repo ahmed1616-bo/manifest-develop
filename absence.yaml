@@ -40,6 +40,7 @@ spec:
       imagePullSecrets:
         - name: harbor-creds1
       serviceAccountName: esprit-app-sa
+      automountServiceAccountToken: true
       initContainers:
       - name: vault-init
         image: hashicorp/vault:1.15.0
@@ -56,6 +57,9 @@ spec:
           mountPath: /vault/config
         - name: vault-secrets
           mountPath: /vault/secrets 
+        - name: esprit-app-token  # Add this mount
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          readOnly: true
       containers:
       - name: portail-absence
         image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_absence:develop-d48f8894
@@ -111,5 +115,11 @@ spec:
         configMap:
           name: vault-config-esprit
       - name: vault-secrets
-        emptyDir: {}   
+        emptyDir: {}
+      - name: esprit-app-token 
+        projected:
+          sources:
+          - serviceAccountToken:
+              expirationSeconds: 3600
+              path: token   
 
