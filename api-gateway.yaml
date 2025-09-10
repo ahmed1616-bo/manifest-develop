@@ -65,6 +65,12 @@ spec:
             value: dev
           - name: TZ
             value: "Africa/Tunis"
+          - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+            value: "health,info,prometheus"
+          - name: MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED
+            value: "true"
+          - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+            value: "/actuator"
         command:
         - sh
         - -c
