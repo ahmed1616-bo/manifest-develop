@@ -49,9 +49,9 @@ spec:
       policies:
       - type: Percent
         value: 50          # Augmenter de max 50% toutes les 30s
-        periodSeconds: 30
+        periodSeconds: 120
       - type: Pods
-        value: 3           # Ou ajouter max 3 pods toutes les 30s
-        periodSeconds: 30
+        value: 1          
+        periodSeconds: 120
       selectPolicy: Max    # Choisit la politique la plus agressive (rapidité)
 
