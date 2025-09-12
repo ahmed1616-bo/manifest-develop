@@ -26,7 +26,7 @@ metadata:
     app:  portail-entreprise
     portail-entreprise.service: api-gateway
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 0
   selector:
     matchLabels:
@@ -58,7 +58,7 @@ spec:
         - name: vault-secrets
           mountPath: /vault/secrets 
       containers:  
-      - image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_api-gateway:develop-bcce54fd
+      - image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_api-gateway:develop-54c863d1
         name: portail-api-gateway
         env:
           - name: SPRING_PROFILES_ACTIVE
@@ -92,6 +92,13 @@ spec:
           readOnly: true
         ports:       
         - containerPort: 8222
+        resources:
+          requests:
+            memory: "512Mi"  
+            cpu: "150m"     
+          limits:
+            memory: "1024Mi"  
+            cpu: "1000m" 
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
@@ -99,13 +106,6 @@ spec:
           initialDelaySeconds: 60
           periodSeconds: 30
           failureThreshold: 3
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "150m"
-          limits:
-            memory: "1024Mi"
-            cpu: "1000m"
         livenessProbe:
           httpGet:
             path: /actuator/health/liveness
