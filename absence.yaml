@@ -104,7 +104,7 @@ spec:
           failureThreshold: 3 
         resources:
           requests:
-            memory: "256Mi"  
+            memory: "512Mi"  
             cpu: "150m"     
           limits:
             memory: "1024Mi"  
