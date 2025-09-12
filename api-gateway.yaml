@@ -99,6 +99,13 @@ spec:
           initialDelaySeconds: 60
           periodSeconds: 30
           failureThreshold: 3
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "150m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
         livenessProbe:
           httpGet:
             path: /actuator/health/liveness

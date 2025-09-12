@@ -107,6 +107,13 @@ spec:
           initialDelaySeconds: 240
           periodSeconds: 30
           failureThreshold: 3
+        resources:
+          requests:
+            memory: "512Mi"  
+            cpu: "150m"     
+          limits:
+            memory: "1024Mi"  
+            cpu: "1000m" 
       restartPolicy: Always
       volumes:
       - name: vault-config-esprit
