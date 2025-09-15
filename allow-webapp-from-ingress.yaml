@@ -27,4 +27,11 @@ spec:
       ports:
         - protocol: TCP
           port: 8222
+    - to:
+        - podSelector: {}
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
 

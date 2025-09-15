@@ -63,3 +63,13 @@ spec:
       ports:
         - protocol: UDP
           port: 53
+        - protocol: tcp
+          port: 53
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: vault
+      ports:
+        - protocol: TCP
+          port: 8200
+
