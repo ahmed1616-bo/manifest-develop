@@ -1,30 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: webapp-netpol
+  name: default-deny
   namespace: esprit-portail-entreprise-dev
 spec:
-  podSelector:
-    matchLabels:
-      app:  portail-entreprise
-      portail-entreprise.service: webapp
+  podSelector: {}
   policyTypes:
   - Ingress
   - Egress
-  ingress:
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          name: ingress-nginx
-    ports:
-    - protocol: TCP
-      port: 80
-  egress:
-  - to:
-    - podSelector:
-        matchLabels:
-          app:  portail-entreprise
-          portail-entreprise.service: api-gateway
-    ports:
-    - protocol: TCP
-      port: 8222
