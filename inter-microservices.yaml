@@ -37,7 +37,8 @@ spec:
   egress:
     - to:
         - podSelector:
-            app: portail-entreprise
+            matchLabels:
+              app: portail-entreprise
       ports:
         - protocol: TCP
           port: 1923
@@ -57,7 +58,8 @@ spec:
           port: 1924
         - protocol: TCP
           port: 8222
-    - to: []
+    - to:
+        - podSelector: {}
       ports:
         - protocol: UDP
           port: 53

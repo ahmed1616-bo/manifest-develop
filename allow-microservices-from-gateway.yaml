@@ -41,7 +41,8 @@ spec:
           port: 1926
         - protocol: TCP
           port: 1924
-    - to: []
+    - to:
+        - podSelector: {}
       ports:
         - protocol: UDP
           port: 53
