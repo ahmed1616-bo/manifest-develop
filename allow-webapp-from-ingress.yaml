@@ -26,7 +26,4 @@ spec:
       ports:
         - protocol: TCP
           port: 8222
-    - to: []
-      ports:
-        - protocol: UDP
-          port: 53
+    
