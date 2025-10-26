@@ -13,8 +13,8 @@ spec:
     name: absence
 
   # Nombre minimum et maximum de pods
-  minReplicas: 2    
-  maxReplicas: 8    
+  minReplicas: 1    
+  maxReplicas: 5   
 
   # Métriques surveillées (CPU et Mémoire)
   metrics:
