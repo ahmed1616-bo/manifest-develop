@@ -64,6 +64,8 @@ spec:
       serviceAccountName: esprit-app-sa
       imagePullSecrets:
         - name: harbor-creds1
+      nodeSelector:
+        node-role: application-workload
        
       containers:
       - name: portail-timetable

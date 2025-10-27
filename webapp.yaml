@@ -86,6 +86,8 @@ spec:
         portail-entreprise.service: webapp
         institute: esb
     spec:
+      nodeSelector:
+        node-role: application-workload
       imagePullSecrets:
         - name: harbor-creds1       
       containers:
