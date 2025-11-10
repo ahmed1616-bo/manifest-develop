@@ -12,9 +12,9 @@ spec:
     kind: Deployment
     name: absence
 
-  # Nombre minimum et maximum de pods
+  
   minReplicas: 1    
-  maxReplicas: 5   
+  maxReplicas: 4   
 
   # Métriques surveillées (CPU et Mémoire)
   metrics:
