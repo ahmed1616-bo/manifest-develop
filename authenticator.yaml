@@ -61,7 +61,7 @@ spec:
           mountPath: /vault/secrets   
       containers:
       - name: portail-authentication
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_authenticator:develop-e989c7de
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_authenticator:develop-586b4f0d
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: dev
