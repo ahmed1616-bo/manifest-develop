@@ -92,7 +92,7 @@ spec:
         - name: harbor-creds1       
       containers:
       - name: portail-webapp
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_webapp:develop-702970c5
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_webapp:develop-f5953ca3
         ports:
         - containerPort: 80    
         readinessProbe:
