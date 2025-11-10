@@ -64,7 +64,7 @@ spec:
           readOnly: true
       containers:
       - name: portail-absence
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_absence:develop-17de2479
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_absence:develop-5341d3aa
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: dev
