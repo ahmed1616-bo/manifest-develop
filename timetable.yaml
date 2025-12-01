@@ -69,7 +69,7 @@ spec:
        
       containers:
       - name: portail-timetable
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_timetable:develop-938632ef
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_timetable:develop-08009b2a
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: dev
