@@ -60,7 +60,7 @@ spec:
           mountPath: /vault/secrets      
       containers:
       - name: portail-resultat
-        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_resultat:develop-1568bf7e
+        image: harbor.pixelslabs.com/projetesprit/esprit-portail-entreprise_resultat:develop-49420ca3
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: dev
