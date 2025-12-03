@@ -12,29 +12,29 @@ spec:
     kind: Deployment
     name: inscription
 
-  
-  minReplicas: 1    
+ 
+  minReplicas: 1   
   maxReplicas: 4    
 
-  
+ 
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 95
+        averageUtilization: 90    
   - type: Resource
     resource:
       name: memory
       target:
         type: Utilization
-        averageUtilization: 95
+        averageUtilization: 90   
 
   
   behavior:
     scaleDown:
-      stabilizationWindowSeconds: 300 e
+      stabilizationWindowSeconds: 300   
       policies:
       - type: Percent
         value: 25          
@@ -45,13 +45,12 @@ spec:
       selectPolicy: Min    
 
     scaleUp:
-      stabilizationWindowSeconds: 60  
+      stabilizationWindowSeconds: 60    
       policies:
       - type: Percent
-        value: 50          
+        value: 50         
         periodSeconds: 60
       - type: Pods
         value: 1          
         periodSeconds: 60
-      selectPolicy: Max 
-
+      selectPolicy: Max    
