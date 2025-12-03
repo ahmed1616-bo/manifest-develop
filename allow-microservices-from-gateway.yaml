@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-microservices-from-gateway
+  name: allow-microservices-from-gateway-dev
   namespace: esprit-portail-entreprise-dev
 spec:
   podSelector:
