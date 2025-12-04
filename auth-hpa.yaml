@@ -23,13 +23,13 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 2    
+        averageUtilization: 1   
   - type: Resource
     resource:
       name: memory
       target:
         type: Utilization
-        averageUtilization: 87
+        averageUtilization: 50
 
   # Stratégie de scaling
   behavior:
